@@ -58,7 +58,7 @@ public class PurchaseDaoImpl implements PurchaseDao{
 
 	@Override
 	public void insertPurchase(Purchase purchase) {
-			
+			System.out.println("paymentOption: "+purchase.getPaymentOption());
 		sqlSession.insert("PurchaseMapper.insertPurchase", purchase);
 	}
 
@@ -66,6 +66,7 @@ public class PurchaseDaoImpl implements PurchaseDao{
 	public void updatePurchase(Purchase purchase) {
 		
 		purchase.setDivyDate(purchase.getDivyDate().substring(0, 10));
+		System.out.println(purchase);
 		sqlSession.update("PurchaseMapper.updatePurchase", purchase);
 	}
 
